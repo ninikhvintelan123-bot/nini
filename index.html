@@ -13,7 +13,8 @@
       --card: #161616; --border: rgba(255,255,255,0.08); --yellow: #e2c044;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: var(--white); font-family: 'Archivo', sans-serif; overflow-x: hidden; min-height: 100vh; }
+    html { width: 100%; }
+    body { background: var(--bg); color: var(--white); font-family: 'Archivo', sans-serif; overflow-x: hidden; min-height: 100vh; width: 100%; }
 
     .blobs { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
     .blob { position: absolute; border-radius: 50%; filter: blur(130px); opacity: 0.13; animation: drift 14s ease-in-out infinite alternate; }
@@ -27,8 +28,8 @@
       background: rgba(13,13,13,0.88); backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
       height: 62px; display: flex; align-items: center;
-      justify-content: space-between; padding: 0 5%;
-      width: 100%;
+      justify-content: space-between; padding: 0 6%;
+      width: 100%; box-sizing: border-box;
     }
     .nav-logo { font-family: 'Archivo Black', sans-serif; font-size: 1.1rem; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; }
     .nav-logo span { color: var(--lime); }
@@ -39,11 +40,11 @@
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
     .hamburger span { display: block; width: 22px; height: 2px; background: var(--white); }
 
-    .page { display: none; position: relative; z-index: 1; min-height: 100vh; padding-top: 62px; width: 100%; }
+    .page { display: none; position: relative; z-index: 1; min-height: 100vh; padding-top: 62px; width: 100%; box-sizing: border-box; }
     .page.active { display: block; animation: pageIn 0.35s ease both; }
     @keyframes pageIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 
-    .wrapper { max-width: 1100px; margin: 0 auto; padding: 55px 5% 90px; }
+    .wrapper { width: 100%; max-width: 1200px; margin: 0 auto; padding: 55px 6% 90px; }
 
     .eyebrow { display: inline-block; background: var(--lime); color: var(--bg); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 5px 13px; margin-bottom: 24px; }
     .big-title { font-family: 'Archivo Black', sans-serif; font-size: clamp(3.5rem, 9vw, 10rem); line-height: 0.92; letter-spacing: -0.03em; text-transform: uppercase; }
@@ -62,8 +63,9 @@
       position: relative;
       height: 130px;
       overflow: hidden;
-      margin: 0 -5% 50px;
-      width: 110%;
+      margin-left: calc(-6% - 1px);
+      width: 112%;
+      margin-bottom: 50px;
     }
     .stripe {
       position: absolute;
@@ -192,14 +194,14 @@
     /* ── MOBILE RESPONSIVE ── */
     @media(max-width:640px){
       /* NAV */
-      nav { padding: 0 4%; }
+      nav { padding: 0 5%; }
       .nav-links { display: none; flex-direction: column; position: absolute; top: 62px; left: 0; right: 0; background: rgba(13,13,13,0.97); border-bottom: 1px solid var(--border); padding: 12px 0; z-index: 998; }
       .nav-links.open { display: flex; }
       .nav-links li a { padding: 14px 24px; font-size: 0.85rem; }
       .hamburger { display: flex; }
 
       /* WRAPPER */
-      .wrapper { padding: 40px 4% 70px; }
+      .wrapper { padding: 40px 5% 70px; }
 
       /* HERO */
       .big-title { font-size: clamp(3rem, 14vw, 5rem); }
@@ -207,7 +209,7 @@
       .hero-sub { font-size: 0.95rem; }
 
       /* STRIPES */
-      .stripes-wrap { margin: 0 -4%; width: 108%; height: 120px; }
+      .stripes-wrap { margin-left: -5%; width: 110%; height: 120px; margin-bottom: 40px; }
       .stripe { height: 32px; font-size: 0.72rem; }
       .stripe-1 { top: 14px; }
       .stripe-2 { top: 68px; }
