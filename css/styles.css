@@ -2548,7 +2548,7 @@
     /* LCD SCREEN on camera — positioned absolutely over the camera image */
     .alb-screen {
       position: absolute;
-      top: 22%; left: 4.5%; width: 63%; height: 57%;
+      top: 39%; left: 10%; width: 54%; height: 41%;
       overflow: hidden; z-index: 3;
       background: #030303;
     }
