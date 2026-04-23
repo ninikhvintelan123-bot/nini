@@ -3083,13 +3083,19 @@
 
       /* HERO */
       .hero { min-height: 100svh; }
-      .logo-wrapper { width: 110px !important; height: 110px !important; margin-top: -110px !important; }
-      .logo-wrapper img { width: 110px !important; height: 110px !important; }
-      .ring-1 { width: 130px !important; height: 130px !important; }
-      .ring-2 { width: 148px !important; height: 148px !important; }
-      .ring-3 { width: 168px !important; height: 168px !important; }
-      #page-home .big-title { font-size: clamp(3rem,16vw,6rem); margin-top: -110px !important; }
+      .logo-wrapper { width: 90px !important; height: 90px !important; margin: 0 0 24px 0 !important; }
+      .logo-wrapper img { width: 70px !important; height: 70px !important; }
+      .ring-1 { width: 100px !important; height: 100px !important; }
+      .ring-2 { width: 115px !important; height: 115px !important; }
+      .ring-3 { width: 130px !important; height: 130px !important; }
+      #page-home .big-title { font-size: clamp(3rem,16vw,6rem); margin-top: 0 !important; }
       .hero-sub { font-size: clamp(1rem, 4vw, 1.4rem); }
+
+      /* TOA STAGE SCENE — reduce height on mobile */
+      #toa-stage { height: 40vh !important; min-height: 200px !important; }
+
+      /* CAMERA ALBUM — hide side buttons on mobile, use filmstrip */
+      .cam2-buttons { display: none !important; }
       .stripes-wrap .stripe { font-size: 0.65rem; padding: 10px 0; }
 
       
@@ -3190,8 +3196,6 @@
     }
 
     @media (max-width: 480px) {
-      .cam2-buttons { display: none; } /* hide side buttons on very small, use filmstrip */
-      .alb-controls { display: flex !important; }
       .stages-grid .stage-text { font-size: 0.78rem; }
       .exp-main-title { font-size: clamp(2rem, 14vw, 3.5rem); }
       .rp-book { transform: none !important; }
