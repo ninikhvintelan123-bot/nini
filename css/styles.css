@@ -1115,8 +1115,10 @@
       max-width: 1250px;
       margin: 0 auto 70px;
     }
-    @media(max-width:640px){ 
-    .ab-hero { grid-template-columns: 1fr; } }
+    @media(max-width:640px){
+    .ab-hero { flex-direction: column; align-items: center; gap: 24px; }
+    .ab-hero-text { max-width: 100%; }
+    .ab-photo-wrap { width: 100%; max-width: 280px; } }
 
     .ab-eyebrow {
       display: block;
@@ -3093,9 +3095,10 @@
       
       /* ABOUT PAGE */
       
-    .ab-hero { grid-template-columns: 1fr; gap: 24px; }
-      .ab-photo-wrap { order: -1; display: flex; justify-content: center; }
-      .tilt-card { max-width: 220px !important; margin-top: 140px !important; }
+    .ab-hero { flex-direction: column; align-items: center; gap: 24px; }
+      .ab-hero-text { max-width: 100%; text-align: center; }
+      .ab-photo-wrap { order: -1; width: 100%; max-width: 260px; display: flex; justify-content: center; }
+      .tilt-card { max-width: 220px !important; }
       .badge-strap-wrap {
       display: flex;
       flex-direction: column;
@@ -3192,6 +3195,27 @@
       .stages-grid .stage-text { font-size: 0.78rem; }
       .exp-main-title { font-size: clamp(2rem, 14vw, 3.5rem); }
       .rp-book { transform: none !important; }
+
+      /* Hero centering on small phones */
+      .hero-content > div[style] { padding-left: 0 !important; align-items: center !important; }
+      .hero-content { text-align: center; }
+      .big-title { text-align: center; }
+      .hero-sub { text-align: center; }
+
+      /* About intro text */
+      .ab-intro { font-size: 0.88rem; line-height: 1.8; }
+      .ab-main-title { font-size: clamp(2rem, 10vw, 3.5rem); text-align: center; }
+
+      /* Energy marquee */
+      .energy-marquee { padding: 10px 0; }
+
+      /* Experience items stack */
+      .exp-item { grid-template-columns: 60px 1fr !important; gap: 10px; }
+      .exp-year { font-size: 0.6rem; }
+
+      /* Contact cards */
+      .ct-contact-card { padding: 16px 12px; }
+      .ct-contact-value { font-size: 0.78rem; }
     }
 
     /* Backstage section */
